@@ -14,6 +14,7 @@
 		010248641F714EB6007DBF39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 010248621F714EB6007DBF39 /* Main.storyboard */; };
 		010248661F714EB6007DBF39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 010248651F714EB6007DBF39 /* Assets.xcassets */; };
 		010248691F714EB6007DBF39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 010248671F714EB6007DBF39 /* LaunchScreen.storyboard */; };
+		010248721F716230007DBF39 /* LargeLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 010248711F716230007DBF39 /* LargeLabelTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		010248651F714EB6007DBF39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		010248681F714EB6007DBF39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0102486A1F714EB6007DBF39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		010248701F716230007DBF39 /* LargeLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargeLabelTableViewCell.h; sourceTree = "<group>"; };
+		010248711F716230007DBF39 /* LargeLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargeLabelTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				010248671F714EB6007DBF39 /* LaunchScreen.storyboard */,
 				0102486A1F714EB6007DBF39 /* Info.plist */,
 				010248561F714EB6007DBF39 /* Supporting Files */,
+				010248701F716230007DBF39 /* LargeLabelTableViewCell.h */,
+				010248711F716230007DBF39 /* LargeLabelTableViewCell.m */,
 			);
 			path = "W3D2 TableViews";
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				0102485B1F714EB6007DBF39 /* AppDelegate.m in Sources */,
 				0102485E1F714EB6007DBF39 /* FirstViewController.m in Sources */,
 				010248581F714EB6007DBF39 /* main.m in Sources */,
+				010248721F716230007DBF39 /* LargeLabelTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,23 +7,47 @@
 //
 
 #import "SecondViewController.h"
+#import "LargeLabelTableViewCell.h"
 
-@interface SecondViewController ()
-
+@interface SecondViewController () <UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *names;
 @end
 
 @implementation SecondViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    _names = @[@"Rick", @"Morty", @"Archer"];
+    self.tableView.dataSource = self;
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
 }
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.names.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+//    NSInteger section  = indexPath.section;
+    NSInteger row = indexPath.row;
+    
+    LargeLabelTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    
+    cell.cellLabel.text = self.names[row];
+    
+    return cell;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return @"Squad";
+}
+
 
 
 @end
