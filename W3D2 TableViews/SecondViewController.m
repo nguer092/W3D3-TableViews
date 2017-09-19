@@ -19,8 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _names = @[@"Rick", @"Morty", @"Archer"];
+    _names = @[@"Rick Oldman", @"Morty Powers", @"Archer Sterling"];
     self.tableView.dataSource = self;
+    self.tableView.rowHeight  =UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 100 ;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
