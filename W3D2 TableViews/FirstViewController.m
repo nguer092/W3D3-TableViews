@@ -10,7 +10,8 @@
 
 @interface FirstViewController () <UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic) NSMutableArray * textRecords;
+@property (nonatomic, strong) NSMutableArray * textRecords;
+@property (nonatomic, strong) NSArray *otherNames;
 @end
 
 @implementation FirstViewController
@@ -27,33 +28,54 @@
 //    Use reuse identifiers recycling --- "dequeReusableCellWithIdentifier"
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     
+    _otherNames = @[@"Jon", @"Bran", @"Rick", @"Morty"];
+    
 }
 
 #pragma mark - UITableViewDataSource (to know what delegate methods im implementing)
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return 2;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 //    table view - check if its the right one
 //    section - check to see which section the delegate method is asking (these infos get passed by delegate)
+    if (section ==0){
+        return _otherNames.count;
+    }
     return self.textRecords.count;
     
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 //    Index Parh carries section and row information together
-//    NSInteger section = indexPath.section;
+    NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
+
 //    UITableViewCell *cell = [[UITableViewCell alloc] init];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    NSString * text = self.textRecords[row];
-                      cell.textLabel.text = text;
+    
+    NSString * text;
+    if(section == 0) {
+        text = _otherNames[row];
+    } else {
+        text = self.textRecords[row];
+
+    }
+    
+    cell.textLabel.text = text;
     
     return cell;
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"ClassMates";
+    } else {
+        return @"Enemies";
+    }
+}
 
 
 
